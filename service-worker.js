@@ -1,21 +1,21 @@
 var cacheName = 'petstore-v1';
 var cacheFiles = [
     'index.html',
-    'product.js',
+    'products.js',
     'petstore.webmanifest',
     'images/yarn.jpg',
     'images/cat-litter.jpg',
     'images/laser-pointer.jpg',
     'images/cat-house.jpg',
-    'images/icon-store-512.png',
+    'images/icon-store-512.png'
 
 ];
 
 self.addEventListener('install', (e)=>{
-    console.log('[service Worker] Install');
+    console.log('[Service Worker] Install');
     e.waitUntil(
         caches.open(cacheName).then((cache)=>{
-            console.log('[service Worker] caching all files');
+            console.log('[Service Worker] Caching all files');
             return cache.addAll(cacheFiles);
         })
     );
