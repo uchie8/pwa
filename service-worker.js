@@ -1,4 +1,4 @@
-var cacheName = 'petstore v-1';
+var cacheName = 'petstore-v1';
 var cacheFiles = [
     'index.html',
     'product.js',
@@ -13,13 +13,13 @@ var cacheFiles = [
 ];
 
 self.addEventListener('install', (e)=>{
-    console.log('[service worker] install');
+    console.log('[Service Worker] Install');
     e.waitUntil(
         caches.open(cacheName).then((cache)=>{
-            console.log('[service worker] caching all files');
+            console.log('[Service Worker] caching all files');
             return cache.addAll(cacheFiles);
         })
-    )
+    );
 });
 
 self.addEventListener('fetch', function(e){
